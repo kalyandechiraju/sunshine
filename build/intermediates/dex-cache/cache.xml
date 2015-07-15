@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/kalyan/Sunshine/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/kalyan/Sunshine/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-c9d1963c40c21774099601e97bde4d40a39b4048.jar" />
+    </item>
+    <item
+        jar="/home/kalyan/Sunshine/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/kalyan/Sunshine/app/build/intermediates/pre-dexed/debug/classes-e1c4abeb57496511909dbcd98314f3ba8651a507.jar" />
+    </item>
+    <item
+        jar="/home/kalyan/Sunshine/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/kalyan/Sunshine/app/build/intermediates/pre-dexed/debug/classes-333e2067b3645c6316f5087a98c66d72cfa42773.jar" />
+    </item>
+    <item
+        jar="/home/kalyan/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/kalyan/Sunshine/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-1c689ca14bcd98517b30e0f6e9241bea6ba50726.jar" />
+    </item>
+
+</items>

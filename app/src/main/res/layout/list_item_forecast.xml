@@ -9,5 +9,4 @@
         android:layout_height="wrap_content"
         android:minHeight="?android:listPreferredItemHeight"
         android:gravity="center_vertical"/>
-
 </LinearLayout>

@@ -1,8 +1,11 @@
 package com.codelight.sunshine;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.text.format.Time;
 import android.util.Log;
@@ -12,8 +15,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,8 +32,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 /**
@@ -58,10 +61,53 @@ public class MainActivityFragment extends Fragment {
         int id = item.getItemId();
 
         if (id == R.id.action_refresh) {
-            new FetchWeatherTask().execute("Bangalore");
+            updateWeather();
+            return true;
+        }
+
+        if (id == R.id.action_map){
+            showMap();
+            return true;
+        }
+
+        if(id == R.id.action_share){
+            shareWeatherInfo();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void shareWeatherInfo() {
+        
+    }
+
+    public void showMap() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String location = sharedPreferences.getString(getString(R.string.pref_location_key),
+                getString(R.string.pref_location_default));
+        Uri geoLocation = Uri.parse("geo:0,0").buildUpon().appendQueryParameter("q", location).build();
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(geoLocation);
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(intent);
+        }else {
+            Toast.makeText(getActivity(), "No map app found!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void updateWeather() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String location = sharedPreferences.getString(getString(R.string.pref_location_key),
+                getString(R.string.pref_location_default));
+        new FetchWeatherTask().execute(location);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        updateWeather();
     }
 
     @Override
@@ -70,25 +116,20 @@ public class MainActivityFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-
-
-
-        String[] forecastList = {
-                "Today - Sunny - 37/21",
-                "Today - Sunny - 37/21",
-                "Today - Sunny - 37/21",
-                "Today - Sunny - 37/21",
-                "Today - Sunny - 37/21",
-                "Today - Sunny - 37/21",
-                "Today - Sunny - 37/21"
-        };
-
-        List<String> weekForecast = new ArrayList<>(Arrays.asList(forecastList));
-
-        mForecastAdapter = new ArrayAdapter<>(getActivity(), R.layout.list_item_forecast, R.id.list_item_forecast_textview, weekForecast);
+        mForecastAdapter = new ArrayAdapter<>(getActivity(), R.layout.list_item_forecast, R.id.list_item_forecast_textview, new ArrayList<String>());
 
         ListView listView = (ListView) rootView.findViewById(R.id.listview_forecast);
         listView.setAdapter(mForecastAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(getActivity(), mForecastAdapter.getItem(position), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), DetailActivity.class)
+                        .putExtra(Intent.EXTRA_TEXT, mForecastAdapter.getItem(position));
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }
@@ -199,6 +240,19 @@ public class MainActivityFragment extends Fragment {
          * Prepare the weather high/lows for presentation.
          */
         private String formatHighLows(double high, double low) {
+
+            //convert to fahrenheit
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String unitType = sharedPreferences.getString(getString(R.string.pref_units_key),
+                    getString(R.string.pref_units_default));
+            if (unitType != null) {
+                if(unitType.equals(getString(R.string.pref_units_imperial))){
+                    high = (high * 1.8) + 32;
+                    low = (low * 1.8) + 32;
+                }
+            }
+
+
             // For presentation, assume the user doesn't care about tenths of a degree.
             long roundedHigh = Math.round(high);
             long roundedLow = Math.round(low);

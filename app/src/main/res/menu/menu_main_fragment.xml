@@ -5,4 +5,7 @@
     <item android:id="@+id/action_refresh"
         android:title="Refresh"
         app:showAsAction="never"/>
+    <item android:id="@+id/action_map"
+        android:title="View on Map"
+        app:showAsAction="never"/>
 </menu>

@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jar="C:\Users\Kalyan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-8234c06feb89f04bc4943fc611d5eae123f6b3e7.jar" />
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-00a168aedc1264fc80f3b37f3a48920b238df260.jar" />
     </item>
     <item
-        jar="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jar="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\classes-7df4c299ab736a73552469af5e77644d58db2874.jar" />
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-3ec83c86846ceb106a76df7797bd31459ac67010.jar" />
     </item>
     <item
-        jar="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jar="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\classes-3c328860457bb3583abf12ef18fbc0c8cab0d83a.jar" />
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\classes-78ef1691e29012e0097264c1adf4b614636e4197.jar" />
     </item>
     <item
-        jar="C:\Users\Kalyan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jar="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-161fb3bb3709f977d265765de90e59b008ab09fa.jar" />
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\Kalyan\Desktop\udacity\sunshine\app\build\intermediates\pre-dexed\debug\classes-289a8bfb447973145e261cb8d57822b6ada9f580.jar" />
     </item>
 
 </items>

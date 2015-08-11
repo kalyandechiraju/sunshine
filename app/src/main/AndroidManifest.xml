@@ -37,6 +37,8 @@
         <provider
             android:authorities="com.codelight.sunshine"
             android:name=".data.WeatherProvider"
+            android:enabled="true"
+            android:exported="true"
             />
         
     </application>

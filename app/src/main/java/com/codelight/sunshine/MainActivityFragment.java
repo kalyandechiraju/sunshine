@@ -68,6 +68,7 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
     private ForecastAdapter mForecastAdapter;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,10 +128,10 @@ public class MainActivityFragment extends Fragment implements LoaderManager.Load
         weatherTask.execute(location);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
+    // since we read the location when we create the loader, all we need to do is restart things
+    void onLocationChanged( ) {
         updateWeather();
+        getLoaderManager().restartLoader(FORECAST_LOADER, null, this);
     }
 
     @Override
